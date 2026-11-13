@@ -164,7 +164,6 @@ dialog p{color:var(--mut);margin:10px 0}
   <a class="brand" href="#"><img alt="" src="imgs/logo.png" onerror="this.remove()"><span class="logo" id="logo"></span></a>
   <input class="search" id="q" type="search" placeholder="Pesquisar produto" aria-label="Pesquisar produto">
   <button class="btn" id="openCart">Carrinho (<span id="count">0</span>)</button>
-  <a class="btn ghost" id="enter" target="_blank" rel="noopener">Entrar</a>
 </header>
 <main id="view"></main>
 <footer>
@@ -355,7 +354,6 @@ $("#logo").textContent = CONFIG.nome;
 $("#footName").textContent = CONFIG.nome;
 $("#footDesc").textContent = CONFIG.descricao;
 $("#foot").textContent = CONFIG.rodape;
-$("#enter").href = CONFIG.discord;
 $("#bg").style.backgroundImage = `url("${CONFIG.fundo}"), url("${FUNDO_EMBUTIDO}")`;
 $("#cookies").onclick = e => { e.preventDefault(); $("#ck").showModal(); };
 $("#ckOk").onclick = () => $("#ck").close();
