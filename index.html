@@ -80,6 +80,23 @@ main{max-width:1280px;width:100%;margin:auto;padding:0 20px 80px;flex:1}
 .sec h2{font-size:16px;font-weight:600;margin-bottom:14px}
 .descr{font-size:14px;line-height:1.7}
 
+
+/* pagamento Pix */
+#pay{max-width:480px}
+#pay h2{margin:0 0 4px;font-size:20px}
+#pay .sub{color:var(--mut);font-size:13px;margin-bottom:14px}
+#pay label{display:block;font-size:13px;color:var(--mut);margin:10px 0 4px}
+#pay .field{width:100%}
+#pay .tot{display:flex;justify-content:space-between;font-weight:700;font-size:18px;margin:16px 0 4px}
+#pay .acts{display:flex;gap:10px;margin-top:16px}
+#pay .acts .btn{flex:1}
+#payErr{color:#f87171;font-size:13px;min-height:18px;margin-top:10px}
+#qrBox{display:flex;justify-content:center;margin:12px 0;min-height:0}
+#qrBox>div,#qrBox>img{background:#fff;padding:10px;border-radius:10px;width:fit-content;max-width:100%}
+#qrBox img{width:240px;height:240px}
+#copia{width:100%;height:92px;resize:none;font:12px/1.4 monospace;word-break:break-all}
+.steps{font-size:13px;color:var(--mut);margin-top:12px;line-height:1.6}
+.priv{font-size:12px;color:var(--mut);margin-top:10px}
 /* avaliações */
 .st{--p:100%;display:inline-block;font-size:16px;letter-spacing:2px;line-height:1;background:linear-gradient(90deg,var(--blue) var(--p),#26304d var(--p));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 .st.sm{font-size:14px}
@@ -132,6 +149,7 @@ footer{border-top:1px solid var(--line);background:#000c;padding:28px 20px;text-
 footer img{width:46px;height:46px;border-radius:10px;object-fit:cover}
 footer .nm{font-weight:700;font-size:18px;color:var(--txt)}
 dialog{background:#111;color:var(--txt);border:1px solid var(--line);border-radius:12px;padding:22px;max-width:520px;width:calc(100% - 32px)}
+dialog{margin:auto;max-height:92vh;overflow:auto}
 dialog::backdrop{background:#000a}
 dialog p{color:var(--mut);margin:10px 0}
 @media (max-width:900px){.top3{grid-template-columns:1fr}}
@@ -165,11 +183,34 @@ dialog p{color:var(--mut);margin:10px 0}
     <button class="btn ghost" id="closeCart">Fechar</button>
   </div>
   <div class="items" id="items"></div>
-  <input class="field" id="pid" inputmode="numeric" placeholder="ID do jogador (para diamantes e passes)">
   <div class="total"><span>Total</span><span id="total">R$ 0,00</span></div>
-  <button class="btn" id="checkout" style="background:var(--ok);color:#000">Finalizar pelo WhatsApp</button>
+  <button class="btn" id="checkout" style="background:var(--ok);color:#000">Pagar com Pix</button>
 </aside>
 <div id="toast" role="status"></div>
+<dialog id="pay" aria-labelledby="payTitulo">
+  <div id="payA">
+    <h2 id="payTitulo">Finalizar pagamento</h2>
+    <p class="sub" id="paySub">Pagamento via Pix.</p>
+    <form id="payForm" novalidate>
+      <div id="idBox"><label for="pId" style="margin-top:0">ID do jogador (Free Fire)</label><input class="field" id="pId" inputmode="numeric" maxlength="15" placeholder="Ex.: 123456789" autocomplete="off">
+      <p class="priv" style="margin-top:4px">O ID aparece no perfil do jogo, ao lado do seu nome.</p></div>
+      <div class="tot"><span>Total</span><span id="payTotal">R$ 0,00</span></div>
+      <div id="payErr" role="alert" aria-live="polite"></div>
+      <div class="acts"><button type="button" class="btn ghost" id="payCancel">Cancelar</button><button type="submit" class="btn" id="payGo">Gerar Pix</button></div>
+      <p class="priv">Seus dados são usados apenas para gerar o pagamento.</p>
+    </form>
+  </div>
+  <div id="payB" hidden>
+    <h2>Pague com Pix</h2>
+    <p class="sub">Total: <strong id="payTotal2"></strong> · Pedido <span id="payPedido"></span></p>
+    <div id="qrBox" aria-label="QR Code do Pix"></div>
+    <label for="copia" style="font-size:13px;color:var(--mut)">Pix copia e cola</label>
+    <textarea class="field" id="copia" readonly></textarea>
+    <div class="acts"><button class="btn" id="payCopy">Copiar código</button><button class="btn ghost" id="payClose">Fechar</button></div>
+    <p class="steps">No app do seu banco, escolha <strong>Pix</strong> e depois <strong>Pix Copia e Cola</strong> (ou leia o QR Code). Confira o valor e confirme. Guarde o comprovante.</p>
+    <p class="steps" id="payComp" hidden><a id="payCompLink" target="_blank" rel="noopener">Enviar comprovante pelo WhatsApp</a></p>
+  </div>
+</dialog>
 <dialog id="ck"><h2 style="margin-top:0">Política de cookies</h2>
   <p>Este site usa armazenamento local do navegador apenas para guardar o seu carrinho. Não usamos cookies de rastreamento. Edite este texto conforme a sua loja.</p>
   <button class="btn" id="ckOk">Entendi</button></dialog>
@@ -179,7 +220,7 @@ dialog p{color:var(--mut);margin:10px 0}
 const CONFIG = {
   nome: "Sua Loja FF",
   descricao: "Lojinha do Discord",
-  whatsapp: "5569999999999",                 // DDI+DDD+número, só dígitos
+  whatsapp: "5569999999999",                 // DDI+DDD+número (usado só para o cliente enviar o comprovante)
   discord: "https://discord.gg/SEUCONVITE",  // botão "Entrar"
   aviso: "+10 MIL CLIENTES SATISFEITOS! CONFIANÇA - AGILIDADE - QUALIDADE!",
   rodape: "© 2026 Sua Loja FF. Todos os direitos reservados.",
@@ -483,16 +524,73 @@ $("#openCart").onclick = ()=>toggle(true);
 $("#closeCart").onclick = $("#shade").onclick = ()=>toggle(false);
 $("#q").addEventListener("input",render);
 window.addEventListener("hashchange",()=>{ hasPrev = true; $("#q").value=""; revFiltro="all"; revOrdem="recentes"; render(); const home=!location.hash.startsWith("#produto-"); window.scrollTo(0, home?homeScroll:0); });
+/* ===== Pagamento Pix (a cobrança é criada em /api/create-pix; a chave fica no servidor) ===== */
+const soDig = v => String(v||"").replace(/\D/g,"");
+function cartItens(){ return Object.keys(cart).filter(prod).map(id=>({id,qtd:cart[id]})); }
+function cartTotal(){ return cartItens().reduce((s,i)=>s+prod(i.id).preco*i.qtd,0); }
+const CATS_COM_ID = ["diamantes","passes","combo"];
+function precisaId(){ return cartItens().some(i=>CATS_COM_ID.includes(prod(i.id).cat)); }
+function payErro(m){ $("#payErr").textContent = m||""; }
+
 $("#checkout").onclick = ()=>{
-  const ids = Object.keys(cart).filter(prod);
-  if(!ids.length) return;
-  const pid = $("#pid").value.trim();
-  const total = ids.reduce((s,id)=>s+prod(id).preco*cart[id],0);
-  const linhas = ids.map(id=>`• ${cart[id]}x ${prod(id).nome} (${brl(prod(id).preco*cart[id])})`);
-  const msg = `Olá! Quero finalizar este pedido:\n${linhas.join("\n")}\nTotal: ${brl(total)}${pid?`\nID do jogador: ${pid}`:""}`;
-  window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`,"_blank");
+  if(!cartItens().length) return;
+  toggle(false);
+  $("#payA").hidden = false; $("#payB").hidden = true; payErro("");
+  $("#payTotal").textContent = brl(cartTotal());
+  $("#payGo").disabled = false; $("#payGo").textContent = "Gerar Pix";
+  const pedeId = precisaId();
+  $("#idBox").hidden = !pedeId;
+  $("#paySub").textContent = pedeId ? "Pagamento via Pix. Informe o seu ID para gerar o QR Code." : "Pagamento via Pix. Gerando o seu QR Code…";
+  $("#pay").showModal();
+  if(!pedeId){ if($("#payForm").requestSubmit) $("#payForm").requestSubmit(); else $("#payGo").click(); } // sem ID: gera o Pix direto
+};
+$("#payCancel").onclick = $("#payClose").onclick = ()=>$("#pay").close();
+$("#pId").addEventListener("input",e=>{ e.target.value = soDig(e.target.value).slice(0,15); });
+
+$("#payForm").addEventListener("submit", async e=>{
+  e.preventDefault(); payErro("");
+  const idj = precisaId() ? soDig($("#pId").value) : "";
+  if(precisaId()&&!idj) return payErro("Informe o ID do jogador para receber diamantes, passes ou combos.");
+  if(idj&&(idj.length<6||idj.length>15)) return payErro("ID do jogador inválido. Confira no seu perfil do jogo.");
+  const btn=$("#payGo"); btn.disabled=true; btn.textContent="Gerando Pix…";
+  try{
+    const r = await fetch("/api/create-pix",{method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({itens:cartItens(),idJogador:idj})});
+    let d=null; try{ d=await r.json(); }catch(_){}
+    if(!r.ok||!d) throw new Error((d&&d.erro)||"Não foi possível gerar o Pix agora. Tente novamente.");
+    mostrarPix(d);
+  }catch(err){
+    payErro(err.message||"Não foi possível gerar o Pix agora. Tente novamente.");
+    btn.disabled=false; btn.textContent="Gerar Pix";
+  }
+});
+
+function mostrarPix(d){
+  $("#payA").hidden=true; $("#payB").hidden=false;
+  $("#payTotal2").textContent = brl(d.total);
+  $("#payPedido").textContent = d.pedido||"";
+  const box=$("#qrBox"); box.innerHTML="";
+  if(d.copiaCola && window.QRCode){
+    const holder=document.createElement("div"); box.appendChild(holder);
+    new QRCode(holder,{text:d.copiaCola,width:220,height:220,correctLevel:QRCode.CorrectLevel.M});
+  }else if(d.imagem){
+    const im=document.createElement("img"); im.alt="QR Code do Pix"; im.src=d.imagem; box.appendChild(im);
+  }
+  $("#copia").value = d.copiaCola||"";
+  $("#payCopy").hidden = !d.copiaCola; $("#copia").hidden = !d.copiaCola;
+  if(/^\d{12,15}$/.test(CONFIG.whatsapp) && CONFIG.whatsapp!=="5569999999999"){
+    $("#payCompLink").href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent("Olá! Segue o comprovante do pedido "+(d.pedido||"")+".")}`;
+    $("#payComp").hidden=false;
+  }
+}
+$("#payCopy").onclick = async ()=>{
+  const t=$("#copia"), b=$("#payCopy");
+  try{ await navigator.clipboard.writeText(t.value); }
+  catch(_){ t.select(); document.execCommand("copy"); }
+  b.textContent="Código copiado ✔"; setTimeout(()=>b.textContent="Copiar código",1800);
 };
 render(); renderCart();
 </script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </body>
 </html>
