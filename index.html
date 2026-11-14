@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Loja FF</title>
+<title>Sua Loja FF</title>
 <meta name="description" content="Contas, passes, diamantes e combos para Free Fire">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIj4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZTI3YSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmOGEwMCIvPjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0iciIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2U1MzIyZCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzVlMGIxMCIvPjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHBvbHlnb24gcG9pbnRzPSI2MCw1IDEwOSwzMiAxMDksODggNjAsMTE1IDExLDg4IDExLDMyIiBmaWxsPSJ1cmwoI3IpIiBzdHJva2U9InVybCgjZykiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8ZyBmaWxsPSJ1cmwoI2cpIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MCA2MCkgc2tld1goLTgpIHRyYW5zbGF0ZSgtNjAgLTYwKSI+CjxwYXRoIGQ9Ik0yOSAzOGgzNHYxMEg0MHY4aDE5djlINDB2MTdIMjl6Ii8+CjxwYXRoIGQ9Ik02NSAzOGgzNHYxMEg3NnY4aDE5djlINzZ2MTdINjV6Ii8+CjwvZz4KPC9zdmc+">
 <meta name="theme-color" content="#000000">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,8 +31,9 @@ header{display:flex;gap:12px;align-items:center;padding:12px 20px;background:#00
 .btn.glow{box-shadow:0 0 18px #ffc2f566}
 .btn:disabled{opacity:.4;cursor:not-allowed}
 main{max-width:1280px;width:100%;margin:auto;padding:0 20px 80px;flex:1}
-.hero{height:170px;display:flex;align-items:center;justify-content:center;margin:20px 0;font-size:clamp(34px,7vw,64px);font-weight:700;text-shadow:0 4px 24px #000}
-.hero img{max-height:100%;max-width:100%;object-fit:contain}
+.hero{min-height:170px;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:center;margin:20px 0;font-size:clamp(34px,7vw,64px);font-weight:700;text-shadow:0 4px 24px #000}
+.hero img{height:clamp(64px,11vw,104px);width:auto}
+.hero small{display:block;font-size:clamp(13px,2.2vw,17px);font-weight:500;color:#e8e8f0;letter-spacing:.4px;margin-top:2px}
 .pill{display:inline-block;margin:26px 0 14px;padding:10px 20px;border-radius:12px;background:#1a1220cc;border:1px solid #2a1f33;color:var(--title);font-weight:600;font-size:15px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
@@ -161,13 +163,13 @@ dialog p{color:var(--mut);margin:10px 0}
 <div id="bg"></div>
 <div class="top" id="top"></div>
 <header>
-  <a class="brand" href="#"><img alt="" src="imgs/logo.png" onerror="this.remove()"><span class="logo" id="logo"></span></a>
+  <a class="brand" href="#"><img alt="" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIj4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZTI3YSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmOGEwMCIvPjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0iciIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2U1MzIyZCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzVlMGIxMCIvPjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHBvbHlnb24gcG9pbnRzPSI2MCw1IDEwOSwzMiAxMDksODggNjAsMTE1IDExLDg4IDExLDMyIiBmaWxsPSJ1cmwoI3IpIiBzdHJva2U9InVybCgjZykiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8ZyBmaWxsPSJ1cmwoI2cpIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MCA2MCkgc2tld1goLTgpIHRyYW5zbGF0ZSgtNjAgLTYwKSI+CjxwYXRoIGQ9Ik0yOSAzOGgzNHYxMEg0MHY4aDE5djlINDB2MTdIMjl6Ii8+CjxwYXRoIGQ9Ik02NSAzOGgzNHYxMEg3NnY4aDE5djlINzZ2MTdINjV6Ii8+CjwvZz4KPC9zdmc+"><span class="logo" id="logo"></span></a>
   <input class="search" id="q" type="search" placeholder="Pesquisar produto" aria-label="Pesquisar produto">
   <button class="btn" id="openCart">Carrinho (<span id="count">0</span>)</button>
 </header>
 <main id="view"></main>
 <footer>
-  <img alt="" src="imgs/logo.png" onerror="this.remove()">
+  <img alt="" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIj4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZTI3YSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmOGEwMCIvPjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0iciIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2U1MzIyZCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzVlMGIxMCIvPjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHBvbHlnb24gcG9pbnRzPSI2MCw1IDEwOSwzMiAxMDksODggNjAsMTE1IDExLDg4IDExLDMyIiBmaWxsPSJ1cmwoI3IpIiBzdHJva2U9InVybCgjZykiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8ZyBmaWxsPSJ1cmwoI2cpIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MCA2MCkgc2tld1goLTgpIHRyYW5zbGF0ZSgtNjAgLTYwKSI+CjxwYXRoIGQ9Ik0yOSAzOGgzNHYxMEg0MHY4aDE5djlINDB2MTdIMjl6Ii8+CjxwYXRoIGQ9Ik02NSAzOGgzNHYxMEg3NnY4aDE5djlINzZ2MTdINjV6Ii8+CjwvZz4KPC9zdmc+">
   <div class="nm" id="footName"></div>
   <div id="footDesc"></div>
   <div><a href="#" id="cookies">Política de cookies</a></div>
@@ -221,7 +223,7 @@ const CONFIG = {
   descricao: "Lojinha do Discord",
   whatsapp: "5569999999999",                 // DDI+DDD+número (usado só para o cliente enviar o comprovante)
   discord: "https://discord.gg/SEUCONVITE",  // botão "Entrar"
-  aviso: "+10 MIL CLIENTES SATISFEITOS! CONFIANÇA - AGILIDADE - QUALIDADE!",
+  aviso: "PAGAMENTO VIA PIX · ATENDIMENTO RÁPIDO · COMPRA SEGURA",
   rodape: "© 2026 Sua Loja FF. Todos os direitos reservados.",
   fundo: "imgs/fundo.jpg",
   logoGrande: "imgs/logo-grande.png",
@@ -255,14 +257,14 @@ const PRODUTOS = [
   {id:"p2", cat:"passes", nome:"Passe Booyah",                     de:19.90, preco:14.90, vendidas:22, estoque:50},
   {id:"p3", cat:"passes", nome:"Cartão Semanal",                   de:9.90,  preco:7.90,  vendidas:60, estoque:99},
   {id:"p4", cat:"passes", nome:"Cartão Mensal",                    de:44.90, preco:34.90, vendidas:35, estoque:99},
-  {id:"n1", cat:"antigo", nome:"Conta Antiga Nostalgia 💨",        de:129.90, preco:79.90, vendidas:2, estoque:1},
+  {id:"n1", cat:"antigo", nome:"Conta Antiga Nostalgia 💨",        de:129.90, preco:17.90, vendidas:2, estoque:1},
   {id:"k1", cat:"codiguin", nome:"Codiguin Universal",             de:7.90,  preco:5.90,  vendidas:80, estoque:30},
-  {id:"c1", cat:"combo", nome:"Combo Start Pro 🔥",                de:79.90, preco:49.90, vendidas:18, estoque:10},
-  {id:"c2", cat:"combo", nome:"Combo Elite",                       de:119.90, preco:89.90, vendidas:7, estoque:10},
+  {id:"c1", cat:"combo", nome:"Combo Start Pro 🔥",                de:79.90, preco:22.90, vendidas:18, estoque:10},
+  {id:"c2", cat:"combo", nome:"Combo Elite",                       de:119.90, preco:25.00, vendidas:7, estoque:10},
   {id:"d100",  cat:"diamantes", nome:"100 Diamantes 💎",  de:11.90,  preco:9.90,  vendidas:120, estoque:999},
   {id:"d310",  cat:"diamantes", nome:"310 Diamantes 💎",  de:34.90,  preco:26.90, vendidas:90,  estoque:999},
   {id:"d520",  cat:"diamantes", nome:"520 Diamantes 💎",  de:56.90,  preco:48.90, vendidas:70,  estoque:999},
-  {id:"d1060", cat:"diamantes", nome:"1060 Diamantes 💎", de:109.90, preco:96.90, vendidas:41,  estoque:999},
+  {id:"d1060", cat:"diamantes", nome:"1060 Diamantes 💎", de:109.90, preco:21.00, vendidas:41,  estoque:999},
   {id:"s1", cat:"servicos", nome:"Garantia estendida 30 dias", de:14.90, preco:9.90,  vendidas:25, estoque:99},
   {id:"s2", cat:"servicos", nome:"Suporte VIP | Atendimento prioritário", de:19.90, preco:14.90, vendidas:11, estoque:99}
 ];
@@ -335,6 +337,7 @@ const IMG_EMB = {
 ["d100","d310","d520","d1060"].forEach(id=>{ IMG_EMB[id]=IMG_EMB.diamante; });
 /* mesmo escudo para Garantia e Suporte VIP */
 IMG_EMB.s2 = IMG_EMB.s1;
+const LOGO_URI = document.querySelector(".brand img").src;
 const $ = s => document.querySelector(s);
 const brl = n => n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 const catOf = id => CATEGORIAS.find(c=>c.id===id);
@@ -370,7 +373,7 @@ function card(p){
 }
 
 function viewHome(){
-  return `<div class="hero">${imgTag(CONFIG.logoGrande)}<span id="heroTxt">${esc(CONFIG.nome)}</span></div>` +
+  return `<div class="hero"><img alt="" src="${LOGO_URI}"><div><span id="heroTxt">${esc(CONFIG.nome)}</span><small>${esc(CONFIG.descricao)}</small></div></div>` +
     CATEGORIAS.map(c=>{
       const r = PRODUTOS.filter(p=>p.cat===c.id);
       return r.length ? `<span class="pill">${c.nome}</span><div class="grid">${r.map(card).join("")}</div>` : "";
@@ -476,8 +479,6 @@ function render(){
   }else{
     v.innerHTML = viewHome();
     document.title = CONFIG.nome;
-    const hi = v.querySelector(".hero img");
-    if(hi){ const hide=()=>{ $("#heroTxt").style.display="none"; }; if(hi.complete&&hi.naturalWidth) hide(); else hi.onload=hide; }
   }
 }
 
