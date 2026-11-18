@@ -1,3 +1,4 @@
+
 // Função serverless da Vercel: cria a cobrança Pix na TiggerPay.
 // A chave de API fica SOMENTE na variável de ambiente TIGGERPAY_API_KEY (nunca no navegador).
 const PRODUTOS = require('./_produtos');
@@ -65,7 +66,7 @@ module.exports = async (req, res) => {
 
   // 2) ID do jogador: obrigatório só para diamantes, passes e combos (contas e outros itens não pedem ID).
   const idJogador = soDigitos(body.idJogador).slice(0, 15);
-  const precisaId = itens.some((it) => ['diamantes', 'passes', 'combo'].includes(PRODUTOS[it.id].cat));
+  const precisaId = itens.some((it) => ['diamantes', 'passes', 'codiguin'].includes(PRODUTOS[it.id].cat));
   if (precisaId && !idJogador) return res.status(400).json({ erro: 'Informe o ID do jogador.' });
   if (idJogador && (idJogador.length < 6 || idJogador.length > 15)) return res.status(400).json({ erro: 'ID do jogador inválido.' });
   const pedido = 'LJ' + Date.now().toString(36).toUpperCase();
