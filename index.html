@@ -510,7 +510,7 @@ window.addEventListener("hashchange",()=>{ hasPrev = true; $("#q").value=""; rev
 const soDig = v => String(v||"").replace(/\D/g,"");
 function cartItens(){ return Object.keys(cart).filter(prod).map(id=>({id,qtd:cart[id]})); }
 function cartTotal(){ return cartItens().reduce((s,i)=>s+prod(i.id).preco*i.qtd,0); }
-const CATS_COM_ID = ["diamantes","passes","combo"];
+const CATS_COM_ID = ["diamantes","passes","codiguin"];
 function precisaId(){ return cartItens().some(i=>CATS_COM_ID.includes(prod(i.id).cat)); }
 function payErro(m){ $("#payErr").textContent = m||""; }
 
@@ -532,7 +532,7 @@ $("#pId").addEventListener("input",e=>{ e.target.value = soDig(e.target.value).s
 $("#payForm").addEventListener("submit", async e=>{
   e.preventDefault(); payErro("");
   const idj = precisaId() ? soDig($("#pId").value) : "";
-  if(precisaId()&&!idj) return payErro("Informe o ID do jogador para receber diamantes, passes ou combos.");
+  if(precisaId()&&!idj) return payErro("Informe o ID do jogador para receber seu pedido.");
   if(idj&&(idj.length<6||idj.length>15)) return payErro("ID do jogador inválido. Confira no seu perfil do jogo.");
   const btn=$("#payGo"); btn.disabled=true; btn.textContent="Gerando Pix…";
   try{
