@@ -15,14 +15,14 @@ module.exports = {
   "p2": { "nome": "Passe Booyah", "cat": "passes", "preco": 14.9 },
   "p3": { "nome": "Cartão Semanal", "cat": "passes", "preco": 7.9 },
   "p4": { "nome": "Cartão Mensal", "cat": "passes", "preco": 34.9 },
-  "n1": { "nome": "Conta Antiga Nostalgia 💨", "cat": "antigo", "preco": 79.9 },
+  "n1": { "nome": "Conta Antiga Nostalgia 💨", "cat": "antigo", "preco": 17.9 },
   "k1": { "nome": "Codiguin Universal", "cat": "codiguin", "preco": 5.9 },
-  "c1": { "nome": "Combo Start Pro 🔥", "cat": "combo", "preco": 49.9 },
-  "c2": { "nome": "Combo Elite", "cat": "combo", "preco": 89.9 },
+  "c1": { "nome": "Combo Start Pro 🔥", "cat": "combo", "preco": 22.9 },
+  "c2": { "nome": "Combo Elite", "cat": "combo", "preco": 25 },
   "d100": { "nome": "100 Diamantes 💎", "cat": "diamantes", "preco": 9.9 },
   "d310": { "nome": "310 Diamantes 💎", "cat": "diamantes", "preco": 26.9 },
   "d520": { "nome": "520 Diamantes 💎", "cat": "diamantes", "preco": 48.9 },
-  "d1060": { "nome": "1060 Diamantes 💎", "cat": "diamantes", "preco": 96.9 },
+  "d1060": { "nome": "1060 Diamantes 💎", "cat": "diamantes", "preco": 21 },
   "s1": { "nome": "Garantia estendida 30 dias", "cat": "servicos", "preco": 9.9 },
   "s2": { "nome": "Suporte VIP | Atendimento prioritário", "cat": "servicos", "preco": 14.9 }
 };
