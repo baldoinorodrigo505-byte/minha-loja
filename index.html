@@ -3,9 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sua Loja FF</title>
+<title>Loja FF</title>
 <meta name="description" content="Contas, passes, diamantes e combos para Free Fire">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIj4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZTI3YSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmOGEwMCIvPjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0iciIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2U1MzIyZCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzVlMGIxMCIvPjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHBvbHlnb24gcG9pbnRzPSI2MCw1IDEwOSwzMiAxMDksODggNjAsMTE1IDExLDg4IDExLDMyIiBmaWxsPSJ1cmwoI3IpIiBzdHJva2U9InVybCgjZykiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8ZyBmaWxsPSJ1cmwoI2cpIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MCA2MCkgc2tld1goLTgpIHRyYW5zbGF0ZSgtNjAgLTYwKSI+CjxwYXRoIGQ9Ik0yOSAzOGgzNHYxMEg0MHY4aDE5djlINDB2MTdIMjl6Ii8+CjxwYXRoIGQ9Ik02NSAzOGgzNHYxMEg3NnY4aDE5djlINzZ2MTdINjV6Ii8+CjwvZz4KPC9zdmc+">
 <meta name="theme-color" content="#000000">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,9 +30,8 @@ header{display:flex;gap:12px;align-items:center;padding:12px 20px;background:#00
 .btn.glow{box-shadow:0 0 18px #ffc2f566}
 .btn:disabled{opacity:.4;cursor:not-allowed}
 main{max-width:1280px;width:100%;margin:auto;padding:0 20px 80px;flex:1}
-.hero{min-height:170px;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:center;margin:20px 0;font-size:clamp(34px,7vw,64px);font-weight:700;text-shadow:0 4px 24px #000}
-.hero img{height:clamp(64px,11vw,104px);width:auto}
-.hero small{display:block;font-size:clamp(13px,2.2vw,17px);font-weight:500;color:#e8e8f0;letter-spacing:.4px;margin-top:2px}
+.hero{height:170px;display:flex;align-items:center;justify-content:center;margin:20px 0;font-size:clamp(34px,7vw,64px);font-weight:700;text-shadow:0 4px 24px #000}
+.hero img{max-height:100%;max-width:100%;object-fit:contain}
 .pill{display:inline-block;margin:26px 0 14px;padding:10px 20px;border-radius:12px;background:#1a1220cc;border:1px solid #2a1f33;color:var(--title);font-weight:600;font-size:15px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
@@ -82,23 +80,6 @@ main{max-width:1280px;width:100%;margin:auto;padding:0 20px 80px;flex:1}
 .sec h2{font-size:16px;font-weight:600;margin-bottom:14px}
 .descr{font-size:14px;line-height:1.7}
 
-
-/* pagamento Pix */
-#pay{max-width:480px}
-#pay h2{margin:0 0 4px;font-size:20px}
-#pay .sub{color:var(--mut);font-size:13px;margin-bottom:14px}
-#pay label{display:block;font-size:13px;color:var(--mut);margin:10px 0 4px}
-#pay .field{width:100%}
-#pay .tot{display:flex;justify-content:space-between;font-weight:700;font-size:18px;margin:16px 0 4px}
-#pay .acts{display:flex;gap:10px;margin-top:16px}
-#pay .acts .btn{flex:1}
-#payErr{color:#f87171;font-size:13px;min-height:18px;margin-top:10px}
-#qrBox{display:flex;justify-content:center;margin:12px 0;min-height:0}
-#qrBox>div,#qrBox>img{background:#fff;padding:10px;border-radius:10px;width:fit-content;max-width:100%}
-#qrBox img{width:240px;height:240px}
-#copia{width:100%;height:92px;resize:none;font:12px/1.4 monospace;word-break:break-all}
-.steps{font-size:13px;color:var(--mut);margin-top:12px;line-height:1.6}
-.priv{font-size:12px;color:var(--mut);margin-top:10px}
 /* avaliações */
 .st{--p:100%;display:inline-block;font-size:16px;letter-spacing:2px;line-height:1;background:linear-gradient(90deg,var(--blue) var(--p),#26304d var(--p));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 .st.sm{font-size:14px}
@@ -151,25 +132,41 @@ footer{border-top:1px solid var(--line);background:#000c;padding:28px 20px;text-
 footer img{width:46px;height:46px;border-radius:10px;object-fit:cover}
 footer .nm{font-weight:700;font-size:18px;color:var(--txt)}
 dialog{background:#111;color:var(--txt);border:1px solid var(--line);border-radius:12px;padding:22px;max-width:520px;width:calc(100% - 32px)}
-dialog{margin:auto;max-height:92vh;overflow:auto}
 dialog::backdrop{background:#000a}
 dialog p{color:var(--mut);margin:10px 0}
 @media (max-width:900px){.top3{grid-template-columns:1fr}}
 @media (max-width:560px){.grid{grid-template-columns:repeat(2,1fr);gap:10px}.price{font-size:18px}.actions .btn{font-size:13px}.track .card{flex-basis:165px}.reviews{grid-template-columns:1fr}.rev .n{font-size:36px}.filters select{margin-left:0}.pp{padding:14px}header{flex-wrap:wrap}.search{order:3;flex-basis:100%}}
 @media (prefers-reduced-motion:reduce){#drawer,#toast{transition:none}html{scroll-behavior:auto}}
 </style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2324850015027143');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2324850015027143&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
 </head>
 <body>
 <div id="bg"></div>
 <div class="top" id="top"></div>
 <header>
-  <a class="brand" href="#"><img alt="" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIj4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZTI3YSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmOGEwMCIvPjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0iciIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2U1MzIyZCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzVlMGIxMCIvPjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHBvbHlnb24gcG9pbnRzPSI2MCw1IDEwOSwzMiAxMDksODggNjAsMTE1IDExLDg4IDExLDMyIiBmaWxsPSJ1cmwoI3IpIiBzdHJva2U9InVybCgjZykiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8ZyBmaWxsPSJ1cmwoI2cpIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MCA2MCkgc2tld1goLTgpIHRyYW5zbGF0ZSgtNjAgLTYwKSI+CjxwYXRoIGQ9Ik0yOSAzOGgzNHYxMEg0MHY4aDE5djlINDB2MTdIMjl6Ii8+CjxwYXRoIGQ9Ik02NSAzOGgzNHYxMEg3NnY4aDE5djlINzZ2MTdINjV6Ii8+CjwvZz4KPC9zdmc+"><span class="logo" id="logo"></span></a>
+  <a class="brand" href="#"><img alt="" src="imgs/logo.png" onerror="this.remove()"><span class="logo" id="logo"></span></a>
   <input class="search" id="q" type="search" placeholder="Pesquisar produto" aria-label="Pesquisar produto">
   <button class="btn" id="openCart">Carrinho (<span id="count">0</span>)</button>
+  <a class="btn ghost" id="enter" target="_blank" rel="noopener">Entrar</a>
 </header>
 <main id="view"></main>
 <footer>
-  <img alt="" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIj4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZTI3YSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmOGEwMCIvPjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0iciIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2U1MzIyZCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzVlMGIxMCIvPjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHBvbHlnb24gcG9pbnRzPSI2MCw1IDEwOSwzMiAxMDksODggNjAsMTE1IDExLDg4IDExLDMyIiBmaWxsPSJ1cmwoI3IpIiBzdHJva2U9InVybCgjZykiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8ZyBmaWxsPSJ1cmwoI2cpIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MCA2MCkgc2tld1goLTgpIHRyYW5zbGF0ZSgtNjAgLTYwKSI+CjxwYXRoIGQ9Ik0yOSAzOGgzNHYxMEg0MHY4aDE5djlINDB2MTdIMjl6Ii8+CjxwYXRoIGQ9Ik02NSAzOGgzNHYxMEg3NnY4aDE5djlINzZ2MTdINjV6Ii8+CjwvZz4KPC9zdmc+">
+  <img alt="" src="imgs/logo.png" onerror="this.remove()">
   <div class="nm" id="footName"></div>
   <div id="footDesc"></div>
   <div><a href="#" id="cookies">Política de cookies</a></div>
@@ -184,36 +181,13 @@ dialog p{color:var(--mut);margin:10px 0}
     <button class="btn ghost" id="closeCart">Fechar</button>
   </div>
   <div class="items" id="items"></div>
+  <input class="field" id="pid" inputmode="numeric" placeholder="ID do jogador (para diamantes e passes)">
   <div class="total"><span>Total</span><span id="total">R$ 0,00</span></div>
-  <button class="btn" id="checkout" style="background:var(--ok);color:#000">Pagar com Pix</button>
+  <button class="btn" id="checkout" style="background:var(--ok);color:#000">Finalizar pelo WhatsApp</button>
 </aside>
 <div id="toast" role="status"></div>
-<dialog id="pay" aria-labelledby="payTitulo">
-  <div id="payA">
-    <h2 id="payTitulo">Finalizar pagamento</h2>
-    <p class="sub" id="paySub">Pagamento via Pix.</p>
-    <form id="payForm" novalidate>
-      <div id="idBox"><label for="pId" style="margin-top:0">ID do jogador (Free Fire)</label><input class="field" id="pId" inputmode="numeric" maxlength="15" placeholder="Ex.: 123456789" autocomplete="off">
-      <p class="priv" style="margin-top:4px">O ID aparece no perfil do jogo, ao lado do seu nome.</p></div>
-      <div class="tot"><span>Total</span><span id="payTotal">R$ 0,00</span></div>
-      <div id="payErr" role="alert" aria-live="polite"></div>
-      <div class="acts"><button type="button" class="btn ghost" id="payCancel">Cancelar</button><button type="submit" class="btn" id="payGo">Gerar Pix</button></div>
-      <p class="priv">Seus dados são usados apenas para gerar o pagamento.</p>
-    </form>
-  </div>
-  <div id="payB" hidden>
-    <h2>Pague com Pix</h2>
-    <p class="sub">Total: <strong id="payTotal2"></strong> · Pedido <span id="payPedido"></span></p>
-    <div id="qrBox" aria-label="QR Code do Pix"></div>
-    <label for="copia" style="font-size:13px;color:var(--mut)">Pix copia e cola</label>
-    <textarea class="field" id="copia" readonly></textarea>
-    <div class="acts"><button class="btn" id="payCopy">Copiar código</button><button class="btn ghost" id="payClose">Fechar</button></div>
-    <p class="steps">No app do seu banco, escolha <strong>Pix</strong> e depois <strong>Pix Copia e Cola</strong> (ou leia o QR Code). Confira o valor e confirme. Guarde o comprovante.</p>
-    <p class="steps" id="payComp" hidden><a id="payCompLink" target="_blank" rel="noopener">Enviar comprovante pelo WhatsApp</a></p>
-  </div>
-</dialog>
 <dialog id="ck"><h2 style="margin-top:0">Política de cookies</h2>
-  <p>Este site usa armazenamento local do navegador apenas para guardar o seu carrinho. Não usamos cookies de rastreamento. Edite este texto conforme a sua loja.</p>
+  <p>Este site usa armazenamento local do navegador para guardar o seu carrinho e utiliza cookies e o Pixel da Meta para medir a eficácia de anúncios e melhorar a sua experiência. Ao continuar navegando, você concorda com esse uso.</p>
   <button class="btn" id="ckOk">Entendi</button></dialog>
 
 <script>
@@ -221,9 +195,9 @@ dialog p{color:var(--mut);margin:10px 0}
 const CONFIG = {
   nome: "Sua Loja FF",
   descricao: "Lojinha do Discord",
-  whatsapp: "5569999999999",                 // DDI+DDD+número (usado só para o cliente enviar o comprovante)
+  whatsapp: "5569999999999",                 // DDI+DDD+número, só dígitos
   discord: "https://discord.gg/SEUCONVITE",  // botão "Entrar"
-  aviso: "PAGAMENTO VIA PIX · ATENDIMENTO RÁPIDO · COMPRA SEGURA",
+  aviso: "+10 MIL CLIENTES SATISFEITOS! CONFIANÇA - AGILIDADE - QUALIDADE!",
   rodape: "© 2026 Sua Loja FF. Todos os direitos reservados.",
   fundo: "imgs/fundo.jpg",
   logoGrande: "imgs/logo-grande.png",
@@ -257,14 +231,14 @@ const PRODUTOS = [
   {id:"p2", cat:"passes", nome:"Passe Booyah",                     de:19.90, preco:14.90, vendidas:22, estoque:50},
   {id:"p3", cat:"passes", nome:"Cartão Semanal",                   de:9.90,  preco:7.90,  vendidas:60, estoque:99},
   {id:"p4", cat:"passes", nome:"Cartão Mensal",                    de:44.90, preco:34.90, vendidas:35, estoque:99},
-  {id:"n1", cat:"antigo", nome:"Conta Antiga Nostalgia 💨",        de:129.90, preco:17.90, vendidas:2, estoque:1},
+  {id:"n1", cat:"antigo", nome:"Conta Antiga Nostalgia 💨",        de:129.90, preco:79.90, vendidas:2, estoque:1},
   {id:"k1", cat:"codiguin", nome:"Codiguin Universal",             de:7.90,  preco:5.90,  vendidas:80, estoque:30},
-  {id:"c1", cat:"combo", nome:"Combo Start Pro 🔥",                de:79.90, preco:22.90, vendidas:18, estoque:10},
-  {id:"c2", cat:"combo", nome:"Combo Elite",                       de:119.90, preco:25.00, vendidas:7, estoque:10},
+  {id:"c1", cat:"combo", nome:"Combo Start Pro 🔥",                de:79.90, preco:49.90, vendidas:18, estoque:10},
+  {id:"c2", cat:"combo", nome:"Combo Elite",                       de:119.90, preco:89.90, vendidas:7, estoque:10},
   {id:"d100",  cat:"diamantes", nome:"100 Diamantes 💎",  de:11.90,  preco:9.90,  vendidas:120, estoque:999},
   {id:"d310",  cat:"diamantes", nome:"310 Diamantes 💎",  de:34.90,  preco:26.90, vendidas:90,  estoque:999},
   {id:"d520",  cat:"diamantes", nome:"520 Diamantes 💎",  de:56.90,  preco:48.90, vendidas:70,  estoque:999},
-  {id:"d1060", cat:"diamantes", nome:"1060 Diamantes 💎", de:109.90, preco:21.00, vendidas:41,  estoque:999},
+  {id:"d1060", cat:"diamantes", nome:"1060 Diamantes 💎", de:109.90, preco:96.90, vendidas:41,  estoque:999},
   {id:"s1", cat:"servicos", nome:"Garantia estendida 30 dias", de:14.90, preco:9.90,  vendidas:25, estoque:99},
   {id:"s2", cat:"servicos", nome:"Suporte VIP | Atendimento prioritário", de:19.90, preco:14.90, vendidas:11, estoque:99}
 ];
@@ -337,7 +311,6 @@ const IMG_EMB = {
 ["d100","d310","d520","d1060"].forEach(id=>{ IMG_EMB[id]=IMG_EMB.diamante; });
 /* mesmo escudo para Garantia e Suporte VIP */
 IMG_EMB.s2 = IMG_EMB.s1;
-const LOGO_URI = document.querySelector(".brand img").src;
 const $ = s => document.querySelector(s);
 const brl = n => n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 const catOf = id => CATEGORIAS.find(c=>c.id===id);
@@ -357,6 +330,7 @@ $("#logo").textContent = CONFIG.nome;
 $("#footName").textContent = CONFIG.nome;
 $("#footDesc").textContent = CONFIG.descricao;
 $("#foot").textContent = CONFIG.rodape;
+$("#enter").href = CONFIG.discord;
 $("#bg").style.backgroundImage = `url("${CONFIG.fundo}"), url("${FUNDO_EMBUTIDO}")`;
 $("#cookies").onclick = e => { e.preventDefault(); $("#ck").showModal(); };
 $("#ckOk").onclick = () => $("#ck").close();
@@ -373,7 +347,7 @@ function card(p){
 }
 
 function viewHome(){
-  return `<div class="hero"><img alt="" src="${LOGO_URI}"><div><span id="heroTxt">${esc(CONFIG.nome)}</span><small>${esc(CONFIG.descricao)}</small></div></div>` +
+  return `<div class="hero">${imgTag(CONFIG.logoGrande)}<span id="heroTxt">${esc(CONFIG.nome)}</span></div>` +
     CATEGORIAS.map(c=>{
       const r = PRODUTOS.filter(p=>p.cat===c.id);
       return r.length ? `<span class="pill">${c.nome}</span><div class="grid">${r.map(card).join("")}</div>` : "";
@@ -479,6 +453,8 @@ function render(){
   }else{
     v.innerHTML = viewHome();
     document.title = CONFIG.nome;
+    const hi = v.querySelector(".hero img");
+    if(hi){ const hide=()=>{ $("#heroTxt").style.display="none"; }; if(hi.complete&&hi.naturalWidth) hide(); else hi.onload=hide; }
   }
 }
 
@@ -523,73 +499,16 @@ $("#openCart").onclick = ()=>toggle(true);
 $("#closeCart").onclick = $("#shade").onclick = ()=>toggle(false);
 $("#q").addEventListener("input",render);
 window.addEventListener("hashchange",()=>{ hasPrev = true; $("#q").value=""; revFiltro="all"; revOrdem="recentes"; render(); const home=!location.hash.startsWith("#produto-"); window.scrollTo(0, home?homeScroll:0); });
-/* ===== Pagamento Pix (a cobrança é criada em /api/create-pix; a chave fica no servidor) ===== */
-const soDig = v => String(v||"").replace(/\D/g,"");
-function cartItens(){ return Object.keys(cart).filter(prod).map(id=>({id,qtd:cart[id]})); }
-function cartTotal(){ return cartItens().reduce((s,i)=>s+prod(i.id).preco*i.qtd,0); }
-const CATS_COM_ID = ["diamantes","passes","combo"];
-function precisaId(){ return cartItens().some(i=>CATS_COM_ID.includes(prod(i.id).cat)); }
-function payErro(m){ $("#payErr").textContent = m||""; }
-
 $("#checkout").onclick = ()=>{
-  if(!cartItens().length) return;
-  toggle(false);
-  $("#payA").hidden = false; $("#payB").hidden = true; payErro("");
-  $("#payTotal").textContent = brl(cartTotal());
-  $("#payGo").disabled = false; $("#payGo").textContent = "Gerar Pix";
-  const pedeId = precisaId();
-  $("#idBox").hidden = !pedeId;
-  $("#paySub").textContent = pedeId ? "Pagamento via Pix. Informe o seu ID para gerar o QR Code." : "Pagamento via Pix. Gerando o seu QR Code…";
-  $("#pay").showModal();
-  if(!pedeId){ if($("#payForm").requestSubmit) $("#payForm").requestSubmit(); else $("#payGo").click(); } // sem ID: gera o Pix direto
-};
-$("#payCancel").onclick = $("#payClose").onclick = ()=>$("#pay").close();
-$("#pId").addEventListener("input",e=>{ e.target.value = soDig(e.target.value).slice(0,15); });
-
-$("#payForm").addEventListener("submit", async e=>{
-  e.preventDefault(); payErro("");
-  const idj = precisaId() ? soDig($("#pId").value) : "";
-  if(precisaId()&&!idj) return payErro("Informe o ID do jogador para receber diamantes, passes ou combos.");
-  if(idj&&(idj.length<6||idj.length>15)) return payErro("ID do jogador inválido. Confira no seu perfil do jogo.");
-  const btn=$("#payGo"); btn.disabled=true; btn.textContent="Gerando Pix…";
-  try{
-    const r = await fetch("/api/create-pix",{method:"POST",headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({itens:cartItens(),idJogador:idj})});
-    let d=null; try{ d=await r.json(); }catch(_){}
-    if(!r.ok||!d) throw new Error((d&&d.erro)||"Não foi possível gerar o Pix agora. Tente novamente.");
-    mostrarPix(d);
-  }catch(err){
-    payErro(err.message||"Não foi possível gerar o Pix agora. Tente novamente.");
-    btn.disabled=false; btn.textContent="Gerar Pix";
-  }
-});
-
-function mostrarPix(d){
-  $("#payA").hidden=true; $("#payB").hidden=false;
-  $("#payTotal2").textContent = brl(d.total);
-  $("#payPedido").textContent = d.pedido||"";
-  const box=$("#qrBox"); box.innerHTML="";
-  if(d.copiaCola && window.QRCode){
-    const holder=document.createElement("div"); box.appendChild(holder);
-    new QRCode(holder,{text:d.copiaCola,width:220,height:220,correctLevel:QRCode.CorrectLevel.M});
-  }else if(d.imagem){
-    const im=document.createElement("img"); im.alt="QR Code do Pix"; im.src=d.imagem; box.appendChild(im);
-  }
-  $("#copia").value = d.copiaCola||"";
-  $("#payCopy").hidden = !d.copiaCola; $("#copia").hidden = !d.copiaCola;
-  if(/^\d{12,15}$/.test(CONFIG.whatsapp) && CONFIG.whatsapp!=="5569999999999"){
-    $("#payCompLink").href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent("Olá! Segue o comprovante do pedido "+(d.pedido||"")+".")}`;
-    $("#payComp").hidden=false;
-  }
-}
-$("#payCopy").onclick = async ()=>{
-  const t=$("#copia"), b=$("#payCopy");
-  try{ await navigator.clipboard.writeText(t.value); }
-  catch(_){ t.select(); document.execCommand("copy"); }
-  b.textContent="Código copiado ✔"; setTimeout(()=>b.textContent="Copiar código",1800);
+  const ids = Object.keys(cart).filter(prod);
+  if(!ids.length) return;
+  const pid = $("#pid").value.trim();
+  const total = ids.reduce((s,id)=>s+prod(id).preco*cart[id],0);
+  const linhas = ids.map(id=>`• ${cart[id]}x ${prod(id).nome} (${brl(prod(id).preco*cart[id])})`);
+  const msg = `Olá! Quero finalizar este pedido:\n${linhas.join("\n")}\nTotal: ${brl(total)}${pid?`\nID do jogador: ${pid}`:""}`;
+  window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`,"_blank");
 };
 render(); renderCart();
 </script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </body>
 </html>
